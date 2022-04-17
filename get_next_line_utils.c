@@ -33,13 +33,7 @@ int	is_end_of_line(char *reader)
 	return (0);
 }
 
-char	*free_reader(char *reader)
-{
-	free(reader);
-	return (NULL);
-}
-
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2, int size)
 {
 	char	*join;
 	int		i;
@@ -49,7 +43,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!s2)
 		return ((char *)s1);
 	i = 0;
-	join = malloc((ft_strlen(s1) + ft_strlen(s2)) * sizeof(char) + 1);
+	join = malloc((ft_strlen(s1) + size )* sizeof(char) + 1);
 	if (!join)
 		return (NULL);
 	while (*s1)
@@ -57,7 +51,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		join[i++] = *s1;
 		s1++;
 	}
-	while (*s2)
+	while (size--)
 	{
 		join[i++] = *s2;
 		s2++;

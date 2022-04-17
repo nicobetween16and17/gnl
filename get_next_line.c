@@ -28,13 +28,33 @@ char	*get_line(char *s, int i)
 	return (res);
 }
 
+int is_end(int k, char **memory, char *reader, int fd)
+{
+	k = read(fd, reader, BUFFER_SIZE);
+	if (k == 0)
+		return (k);
+	if (k < BUFFER_SIZE)
+	{
+		reader[k] = '\0';
+		*memory = ft_strjoin(*memory, reader, k);
+	}
+	else
+	{
+		reader[BUFFER_SIZE] = '\0';
+		*memory = ft_strjoin(*memory, reader, BUFFER_SIZE);
+	}
+	return (k);
+}
+
 char	*get_next_line(int fd)
 {
 	char		*reader;
 	static char	*memory;
 	int			j;
+	int 		k;
 
 	j = 0;
+	k = read(fd, reader, BUFFER_SIZE);
 	reader = malloc(sizeof(char) * BUFFER_SIZE + 1);
 	if (!reader)
 		return (NULL);
@@ -42,13 +62,12 @@ char	*get_next_line(int fd)
 		memory = malloc(sizeof(char) * BUFFER_SIZE + 1);
 	else
 		memory = ft_get_start(memory);
-	if (!memory || !fd)
+	if (fd < 0)
 		return (NULL);
-	while ((!is_end_of_line(reader) || !j) && read(fd, reader, BUFFER_SIZE))
-	{
-		memory = ft_strjoin(memory, reader);
+	while ((!is_end_of_line(reader) || !j) && is_end(k, &memory, reader, fd))
 		j++;
-	}
+	if (!j)
+		return (0);
 	free(reader);
 	return (get_line(memory, 0));
 }
@@ -56,9 +75,17 @@ char	*get_next_line(int fd)
 int	main(void)
 {
 	int	fd;
+	int i;
+	char *s;
 
-	fd = open("test.txt", O_RDONLY);
-	printf("\nline1 is [%s]\n", get_next_line(fd));
-	printf("line2 is [%s]\n", get_next_line(fd));
-	printf("line3 is [%s]\n", get_next_line(fd));
+
+	i = 1;
+	fd = open("tests/41_with_nl", O_RDONLY);
+	s = get_next_line(fd);
+	while (s)
+	{
+		printf("\nline %d is [%s]\n", i, s);
+		i++;
+		s = get_next_line(fd);
+	}
 }
