@@ -22,8 +22,10 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-int	does_contain(char *reader, char c)
+int	does_contain(char *reader, char c, int j)
 {
+	if (j == 1)
+		return (0);
 	while (*reader)
 	{
 		if (*reader == c)
