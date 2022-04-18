@@ -88,7 +88,7 @@ int	main(void)
 	char	*s;
 
 	i = 0;
-	fd = open("tests/multiple_nlx5", O_RDONLY);
+	fd = open("tests/big_line_with_nl", O_RDONLY);
 	s = get_next_line(fd);
 	while (s)
 	{
