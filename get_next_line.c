@@ -18,21 +18,21 @@ char	*get_line(char *s, int i)
 
 	while (s[i] && s[i] != '\n')
 		i++;
-	res = malloc(sizeof(char) * i + 1);
+	res = malloc((i + 2) * sizeof(char));
 	if (!res)
 		return (NULL);
 	i = -1;
 	while (s[++i] && s[i] != '\n')
 		res[i] = s[i];
-	res[i] = '\0';
+	res[i] = s[i];
+	res[i + 1] = '\0';
 	return (res);
 }
 
-int is_end(int k, char **memory, char *reader, int fd)
+int	is_end(char **memory, char *reader, int fd)
 {
+	int	k;
 	k = read(fd, reader, BUFFER_SIZE);
-	if (k == 0)
-		return (k);
 	if (k < BUFFER_SIZE)
 	{
 		reader[k] = '\0';
@@ -43,48 +43,64 @@ int is_end(int k, char **memory, char *reader, int fd)
 		reader[BUFFER_SIZE] = '\0';
 		*memory = ft_strjoin(*memory, reader, BUFFER_SIZE);
 	}
+
 	return (k);
+}
+
+void	set_memory(char **memory, int *j)
+{
+	if (!(*memory))
+		*memory = malloc(sizeof(char) * BUFFER_SIZE + 1);
+	else if (does_contain(*memory, '\n'))
+		(*j)++;
+	if (*memory)
+	{
+		*memory = ft_get_start(*memory);
+		printf("memory before %s\n", *memory);
+	}
 }
 
 char	*get_next_line(int fd)
 {
-	char		*reader;
+	char		reader[BUFFER_SIZE];
 	static char	*memory;
 	int			j;
-	int 		k;
+	char		*res;
 
+	res = 0;
+	free(res);
 	j = 0;
-	k = read(fd, reader, BUFFER_SIZE);
-	reader = malloc(sizeof(char) * BUFFER_SIZE + 1);
-	if (!reader)
-		return (NULL);
+	set_memory(&memory, &j);
 	if (!memory)
-		memory = malloc(sizeof(char) * BUFFER_SIZE + 1);
-	else
-		memory = ft_get_start(memory);
-	if (fd < 0)
 		return (NULL);
-	while ((!is_end_of_line(reader) || !j) && is_end(k, &memory, reader, fd))
+	else if (does_contain(memory, '\n'))
 		j++;
+	if (memory)
+		memory = ft_get_start(memory);
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	printf("reader - [%s]\n", reader);
+	while ((!does_contain(reader, '\n') || !j) && is_end(&memory, reader, fd))
+		j++;
+	printf("memory - [%s]\n", memory);
 	if (!j)
-		return (0);
-	free(reader);
-	return (get_line(memory, 0));
+		return (NULL);
+	res = get_line(memory, 0);
+	return (res);
 }
 
 int	main(void)
 {
-	int	fd;
-	int i;
-	char *s;
-
+	int		fd;
+	int		i;
+	char	*s;
 
 	i = 1;
-	fd = open("tests/41_with_nl", O_RDONLY);
+	fd = open("tests/42_with_nl", O_RDONLY);
 	s = get_next_line(fd);
 	while (s)
 	{
-		printf("\nline %d is [%s]\n", i, s);
+		printf("line %d is [%s] -> doit être à la ligne sauf si fin\n", i, s);
 		i++;
 		s = get_next_line(fd);
 	}

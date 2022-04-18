@@ -22,11 +22,11 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-int	is_end_of_line(char *reader)
+int	does_contain(char *reader, char c)
 {
 	while (*reader)
 	{
-		if (*reader == '\n')
+		if (*reader == c)
 			return (1);
 		reader++;
 	}
@@ -43,7 +43,7 @@ char	*ft_strjoin(char const *s1, char const *s2, int size)
 	if (!s2)
 		return ((char *)s1);
 	i = 0;
-	join = malloc((ft_strlen(s1) + size )* sizeof(char) + 1);
+	join = malloc((ft_strlen(s1) + size) * sizeof(char) + 1);
 	if (!join)
 		return (NULL);
 	while (*s1)
@@ -67,9 +67,9 @@ char	*ft_get_start(char *s)
 	i = 0;
 	while (s[i])
 	{
-		i++;
 		if (s[i] == '\n')
 			return (&s[i + 1]);
+		i++;
 	}
 	return (s);
 }

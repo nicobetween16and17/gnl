@@ -18,7 +18,7 @@
 # include <stdio.h> //a supp
 
 char	*get_next_line(int fd);
-int		is_end_of_line(char *reader);
+int		does_contain(char *reader, char c);
 char	*free_reader(char *reader);
 char	*ft_strjoin(char const *s1, char const *s2, int size);
 char	*ft_get_start(char *s);
