@@ -80,20 +80,20 @@ char	*get_next_line(int fd)
 	res = get_line(memory, 0);
 	return (res);
 }
-/*
+
 int	main(void)
 {
 	int		fd;
 	int		i;
 	char	*s;
 
-	i = 1;
-	fd = open("tests/alternate_line_nl_no_nl", O_RDONLY);
+	i = 0;
+	fd = open("tests/multiple_nlx5", O_RDONLY);
 	s = get_next_line(fd);
 	while (s)
 	{
-		printf("line %d is [%s] -> doit être à la ligne sauf si fin\n", i, s);
+		printf("%d - [%s]\n", i, s);
 		i++;
 		s = get_next_line(fd);
 	}
-}*/
+}

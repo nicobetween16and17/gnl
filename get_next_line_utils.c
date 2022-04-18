@@ -49,15 +49,9 @@ char	*ft_strjoin(char const *s1, char const *s2, int size)
 	if (!join)
 		return (NULL);
 	while (*s1)
-	{
-		join[i++] = *s1;
-		s1++;
-	}
+		join[i++] = *s1++;
 	while (size--)
-	{
-		join[i++] = *s2;
-		s2++;
-	}
+		join[i++] = *s2++;
 	join[i] = '\0';
 	return (join);
 }
