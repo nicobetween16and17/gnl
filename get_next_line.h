@@ -17,10 +17,10 @@
 # include <fcntl.h>
 # include <stdio.h> //a supp
 
-char	*get_next_line(int fd);
-int		does_contain(char *reader, char c, int j);
-char	*free_reader(char *reader);
-char	*ft_strjoin(char const *s1, char const *s2, int size);
-char	*ft_get_start(char *s);
+size_t	ft_strlen(const char *s);
+int		does_contain(char *reader, char c);
+char	*ft_strcpy(char *s1, char *s2);
+char	*ft_strdup(const char *s1);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif
