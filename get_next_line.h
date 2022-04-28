@@ -16,11 +16,13 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stdio.h> //a supp
+# include <limits.h>
 
-size_t	ft_strlen(const char *s);
-int		does_contain(char *reader, char c);
-char	*ft_strcpy(char *s1, char *s2);
-char	*ft_strdup(const char *s1);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*get_next_line(int fd);
+int		does_contain(char *s, char c);
+void	ft_strjoin(char **s1, char const *s2);
+int		ft_get_start(char *s);
+int		ft_strlen(const char *s);
+char	*ft_strcpy(char *s, char *s2);
 
 #endif
