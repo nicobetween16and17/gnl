@@ -12,14 +12,22 @@
 
 #include "get_next_line.h"
 
-int	ft_strlen(const char *s)
+void	ft_strdup(char **s1, const char *s2)
 {
-	int	i;
+	int		i;
+	char	*res;
 
 	i = 0;
-	while (s && s[i] != '\0')
+	free(*s1);
+	while (s2 && s2[i] != '\0')
 		i++;
-	return (i);
+	res = malloc(sizeof(char) * (i + 1));
+
+	i = -1;
+	while (s2 && s2[++i])
+		res[i] = s2[i];
+	res[i] = 0;
+	*s1 = res;
 }
 
 int	does_contain(char *s, char c)
@@ -49,17 +57,20 @@ void	ft_strjoin(char **s1, char const *s2)
 {
 	char	*join;
 	int		i;
+	int 	j;
 
+	j = 0;
 	i = 0;
-
-	join = malloc((ft_strlen(*s1) + ft_strlen(s2) + 1) * sizeof(char));
+	while (*s1 &&(*s1)[i])
+		i++;
+	while (s2 && s2[j])
+		j++;
+	join = malloc((i + j + 1) * sizeof(char));
+	i = -1;
 	if (!join)
 		return ;
-	while (*s1 && (*s1)[i])
-	{
+	while (*s1 && (*s1)[++i])
 		join[i] = (*s1)[i];
-		i++;
-	}
 	free(*s1);
 	while (s2 && *s2)
 		join[i++] = *s2++;

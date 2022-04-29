@@ -37,8 +37,8 @@ static int	ft_init_line(char *memory, char **line)
 	if (memory[0] != 0)
 	{
 		ft_get_start(memory);
-		ft_strjoin(line, memory);
-		if (!line)
+		ft_strdup(line, memory);
+		if (!(*line))
 			return (1);
 	}
 	return (0);
@@ -46,22 +46,8 @@ static int	ft_init_line(char *memory, char **line)
 
 static int	ft_loop_instructions(char *reader, char **line, int j, char *memory)
 {
-	int	i;
-	int k;
-
-	k = -1;
-	i = -1;
 	reader[j] = '\0';
-	if (j < BUFFER_SIZE)
-	{
-		while (memory[++i + j])
-			memory[i] = memory [i +j];
-		while (i < BUFFER_SIZE)
-			memory[i++] = reader[++k];
-		memory[i] = '\0';
-	}
-	else
-		ft_strcpy(memory, reader);
+	ft_strcpy(memory, reader);
 	ft_strjoin(line, reader);
 	if (!(*line))
 		return (1);
@@ -77,36 +63,33 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || ft_init_line(memory, &line) ||BUFFER_SIZE <= 0)
 		return (NULL);
+	if (does_contain(line, '\n'))
+		return (get_line(line, 0));
 	while (ft_set_j(&j, read(fd, reader, BUFFER_SIZE)) && j > 0)
 	{
 		if (ft_loop_instructions(reader, &line, j, memory))
 			return (NULL);
-		printf("return\n");
 		if (does_contain(line, '\n'))
 			return (get_line(line, 0));
 	}
-	if (does_contain(line, '\n'))
-		return (get_line(line, 0));
 	if (memory[0] != 0)
 	{
-		printf("return\n");
 		memory[0] = 0;
 		return (get_line(line, 0));
 	}
-	printf("no return");
 	free(line);
 	return (NULL);
 }
-
+/*
 //unique test
 int main()
 {
  	int		fd;
 	int		i;
 	char	*s;
-	printf("\033[0;31m---------------------NL-------------------\n");
+	printf("\033[0;31m-------------------MULTIPLE_NL-------------------\n");
 	i = 0;
-	fd = open("tests/Othellotest", O_RDONLY);
+	fd = open("tests/multiple_line_with_nl", O_RDONLY);
 	s = get_next_line(fd);
 	do
 	{
@@ -116,7 +99,7 @@ int main()
 	}	while (s);
 	printf("\033[0;31m%d - \033[0m[%s]\n", ++i, s);
 	close(fd);
-}
+}*/
 /*//global test
 int	main(void)
 {

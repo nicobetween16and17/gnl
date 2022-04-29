@@ -10,13 +10,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7a8319c-76ba-463b-a9d0-837198f9c621" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/file/fd_Alternating" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/file/fd_Basic Input" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/file/fd_Beyond File" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/file/fd_Characters" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/file/fd_Empty File" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/file/fd_Empty Lines" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/file/fd_Line Lengths" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/file/fd_Null end" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/file/fd_bonus0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/file/fd_bonus1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/file/fd_bonus2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/file/fd_bonus3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/file/fd_bonus4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/frame.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/gnl_test_bonus.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/gnl_test_mandatory.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/gnl_test_prototypes.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/gnl_test_utils.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/h_colors.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/h_get_next_line_check.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/h_os_version.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Othello42-get_next_line-tester/makefile" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/get_next_line.c" beforeDir="false" afterPath="$PROJECT_DIR$/get_next_line.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_next_line.h" beforeDir="false" afterPath="$PROJECT_DIR$/get_next_line.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_next_line_utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/get_next_line_utils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/norminette/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/norminette/deploy.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/norminette/norminette/run_test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/norminette/norminette/run_test.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/norminette/norminette/tests/loop.zsh" beforeDir="false" afterPath="$PROJECT_DIR$/norminette/norminette/tests/loop.zsh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/norminette/norminette/tests/time.zsh" beforeDir="false" afterPath="$PROJECT_DIR$/norminette/norminette/tests/time.zsh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/norminette" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/41_no_nl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/41_with_nl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/42_no_nl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/42_with_nl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/43_no_nl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/43_with_nl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/alternate_line_nl_no_nl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/alternate_line_nl_with_nl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/big_line_no_nl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/big_line_with_nl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/empty" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/multiple_line_no_nl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/multiple_line_with_nl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/multiple_nlx5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/nl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/python" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/python3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/pyvenv.cfg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,5 +107,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
