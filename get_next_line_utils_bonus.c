@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niespana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 13:54:35 by niespana          #+#    #+#             */
-/*   Updated: 2022/04/16 13:54:36 by niespana         ###   ########.fr       */
+/*   Created: 2022/04/30 14:11:44 by niespana          #+#    #+#             */
+/*   Updated: 2022/04/30 14:11:46 by niespana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void	ft_strdup(char **s1, const char *s2)
 {

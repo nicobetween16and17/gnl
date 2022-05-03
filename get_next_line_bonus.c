@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niespana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 13:54:05 by niespana          #+#    #+#             */
-/*   Updated: 2022/04/16 13:54:15 by niespana         ###   ########.fr       */
+/*   Created: 2022/04/30 14:11:31 by niespana          #+#    #+#             */
+/*   Updated: 2022/04/30 14:11:32 by niespana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*get_line(char *line, int i)
 {
@@ -33,7 +33,7 @@ static int	ft_init_line(char *memory, char **line)
 	*line = malloc(1);
 	if (!(*line))
 		return (1);
-	(*line)[0] = 0;
+	(*line)[0] = '\0';
 	if (memory[0] != 0)
 	{
 		ft_get_start(memory);
